@@ -1,111 +1,87 @@
+<!-- components/AboutMe.vue -->
 <template>
-  <section class="py-24 bg-slate-950 text-white">
-    <!-- Container motion -->
+  <section id="about" class="relative py-24 bg-slate-900 text-white overflow-hidden">
+    <!-- Background Gradient -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.1),_transparent_80%)]" />
+    </div>
+
+    <!-- Content -->
     <div
       v-motion-container
-      class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 items-center gap-12"
+      class="relative z-10 max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-center gap-16"
     >
-      <!-- Gambar -->
+      <!-- Profile -->
       <div
         v-motion
-        :initial="{ opacity: 0, scale: 0.8, y: 50 }"
-        :visibleOnce="{
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: { duration: 800, ease: 'easeOut', delay: 100 }
-        }"
+        :initial="{ opacity: 0, scale: 0.8 }"
+        :visible-once="{ opacity: 1, scale: 1, transition: { duration: 800, ease: 'easeOut' } }"
         class="flex justify-center"
       >
-        <img
-          src="/images/profile.jpeg"
-          alt="Leo Hulu"
-          class="w-60 h-60 object-cover rounded-full shadow-lg border-4 border-blue-500"
+        <ProfileCard
+          name="Leo S. Hulu"
+          title="Web Developer"
+          handle="leocodes"
+          avatar-url="/images/profile-leo.jpeg"
         />
       </div>
 
-      <!-- Teks dan tombol -->
+      <!-- Description -->
       <div
         v-motion
         :initial="{ opacity: 0, x: 50 }"
-        :visibleOnce="{
-          opacity: 1,
-          x: 0,
-          transition: { duration: 1000, ease: 'easeOut', delay: 200 }
-        }"
+        :visible-once="{ opacity: 1, x: 0, transition: { duration: 800, delay: 200, ease: 'easeOut' } }"
       >
-        <h2 class="text-4xl font-bold mb-4">Tentang Saya</h2>
-        <p class="text-gray-300 mb-6 leading-relaxed">
-          Saya <span class="text-blue-400 font-medium">Leo Hulu</span>, seorang pengembang web front-end yang fokus pada pembuatan tampilan modern dan responsif menggunakan <strong>Vue.js</strong>, <strong>Tailwind CSS</strong>, dan <strong>Motion UI</strong>.
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-5">
+          <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">About Me</span>
+        </h2>
+
+        <p class="text-slate-300 mb-6 text-lg leading-relaxed max-w-prose">
+          Halo, saya <span class="font-medium text-white">Leo Hulu</span>. Saya adalah seorang <strong>Web Developer</strong> yang memiliki keahlian dalam pengembangan full-stack. Saya mengubah ide menjadi aplikasi web yang berfungsi penuh, dari antarmuka pengguna interaktif dengan <strong>Vue.js</strong> hingga backend yang terstruktur dengan <strong>Express.js</strong> dan manajemen database menggunakan <strong>Prisma</strong> dan <strong>PostgreSQL</strong>.
         </p>
 
-        <!-- Container untuk badge dan tombol -->
-        <div v-motion-container class="flex flex-col items-start gap-6">
-          <!-- Badges -->
+        <!-- Skills -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold text-slate-200 mb-3">My Main Skills:</h3>
           <div class="flex flex-wrap gap-2">
             <span
-              v-for="(tech, index) in ['Vue.js', 'Tailwind CSS', 'JavaScript', 'Motion UI']"
+              v-for="tech in techStack"
               :key="tech"
-              v-motion
-              :initial="{ opacity: 0, y: 20 }"
-              :visibleOnce="{
-                opacity: 1,
-                y: 0,
-                transition: { delay: 400 + index * 100, duration: 600, ease: 'easeOut' }
-              }"
-              class="badge"
+              class="px-3 py-1.5 text-sm font-semibold text-cyan-200 bg-cyan-900/50 rounded-full"
             >
               {{ tech }}
             </span>
           </div>
+        </div>
 
-          <!-- Tombol -->
-          <div class="flex gap-4">
-            <a
-              v-motion
-              :initial="{ opacity: 0, scale: 0.9 }"
-              :visibleOnce="{
-                opacity: 1,
-                scale: 1,
-                transition: { delay: 800, duration: 300, ease: 'easeOut' }
-              }"
-              href="#contact"
-              class="btn btn-primary"
-            >
-              Hubungi Saya
-            </a>
-            <a
-              v-motion
-              :initial="{ opacity: 0, scale: 0.9 }"
-              :visibleOnce="{
-                opacity: 1,
-                scale: 1,
-                transition: { delay: 900, duration: 300, ease: 'easeOut' }
-              }"
-              href="/cv.pdf"
-              target="_blank"
-              class="btn btn-secondary"
-            >
-              Unduh CV
-            </a>
-          </div>
+        <!-- Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="inline-block">
+            <MagicButton>Contact Me</MagicButton>
+          </a>
+          <MagicButton outline icon="download">Download CV</MagicButton>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<style scoped>
-.badge {
-  @apply bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium;
-}
-.btn {
-  @apply px-6 py-3 transition rounded-md font-semibold;
-}
-.btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700;
-}
-.btn-secondary {
-  @apply border border-white hover:bg-white hover:text-black;
-}
-</style>
+<script setup>
+import ProfileCard from './ui/ProfileCard.vue';
+import MagicButton from './ui/MagicButton.vue';
+
+const techStack = [
+  'HTML', 
+  'CSS', 
+  'JavaScript', 
+  'Vue.js', 
+  'Quasar', 
+  'Tailwind CSS', 
+  'Bootstrap', 
+  'Express.js', 
+  'Prisma', 
+  'PostgreSQL',
+];
+
+
+</script>

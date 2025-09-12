@@ -1,0 +1,30 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      </linearGradient>
+  </defs>
+  <g stroke="url(#grad2)" fill="none" stroke-width="1.5" stroke-linecap="round">
+    <path d="M 50,5 L 50,25 L 30,25 L 30,45 L 10,45 L 10,65" />
+    <path d="M 50,5 L 70,5 L 70,25 L 90,25 L 90,45 L 110,45" />
+    <path d="M 10,65 L 10,85 L 30,85 L 30,105 L 50,105 L 50,125" />
+    <path d="M 110,45 L 110,65 L 90,65 L 90,85 L 70,85 L 70,105" />
+    <path d="M 50,125 L 50,145 L 70,145 L 70,165 L 90,165" />
+    <path d="M 70,105 L 50,105 M 90,85 L 110,85 L 110,105 L 130,105" />
+    <path d="M 150,5 L 150,25 L 170,25 L 170,45 L 190,45" />
+    <path d="M 5,150 L 25,150 L 25,170 L 45,170 L 45,190" />
+    <path d="M 195,150 L 175,150 L 175,170 L 155,170" />
+    <path d="M 150,195 L 150,175 L 130,175" />
+    <circle cx="50" cy="5" r="3" />
+    <circle cx="10" cy="65" r="3" />
+    <circle cx="110" cy="45" r="3" />
+    <circle cx="50" cy="125" r="3" />
+    <circle cx="90" cy="165" r="3" />
+    <circle cx="130" cy="105" r="3" />
+    <circle cx="190" cy="45" r="3" />
+    <circle cx="5" cy="150" r="3" />
+    <circle cx="155" cy="170" r="3" />
+    <circle cx="130" cy="175" r="3" />
+  </g>
+</svg>

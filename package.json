@@ -10,8 +10,12 @@
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@tresjs/cientos": "^4.3.1",
+    "@tresjs/core": "^4.3.6",
     "@vueuse/core": "^13.6.0",
     "@vueuse/motion": "^3.0.3",
+    "lucide-vue-next": "^0.535.0",
     "three": "^0.178.0",
     "vanilla-tilt": "^1.8.1",
     "vue": "^3.5.17"

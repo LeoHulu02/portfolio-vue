@@ -1,22 +1,34 @@
 <template>
-  <button
-  v-motion
-  :initial="{ scale: 1 }"
-  :hover="{ scale: 1.05 }"
-  :transition="{ type: 'spring', stiffness: 300, damping: 20 }"
-  class="relative px-6 py-3 rounded-lg font-semibold transition duration-300"
-  :class="{
-    'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg': !outline,
-    'border border-white text-white hover:bg-white hover:text-black': outline,
-  }"
->
-  <slot />
-</button>
-
+  <button :class="buttonClasses">
+    <slot /> <Download v-if="icon === 'download'" class="ml-2 h-4 w-4" />
+  </button>
 </template>
 
 <script setup>
-defineProps({
-  outline: { type: Boolean, default: false }
+import { computed } from 'vue'
+import { Download } from 'lucide-vue-next'
+
+const props = defineProps({
+  outline: {
+    type: Boolean,
+    default: false
+  },
+  icon: {
+    type: String,
+    default: ''
+  }
+})
+
+// Kelas dasar yang dimiliki kedua tombol
+const baseClasses = 'inline-flex items-center justify-center rounded-lg px-6 py-2.5 text-sm font-semibold shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900'
+
+// Kelas yang berubah berdasarkan prop 'outline'
+const buttonClasses = computed(() => {
+  if (props.outline) {
+    // Gaya Tombol Sekunder (Outline)
+    return `${baseClasses} bg-transparent border border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-slate-600 focus:ring-slate-500`
+  }
+  // Gaya Tombol Primer (Solid)
+  return `${baseClasses} bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500`
 })
 </script>
