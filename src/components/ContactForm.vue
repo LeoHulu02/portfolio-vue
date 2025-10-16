@@ -43,11 +43,11 @@
         <div class="text-center mb-2">
           <h2 class="text-3xl font-extrabold mb-2">
             <span class="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent">
-              Get In Touch
+              Get in Touch
             </span>
           </h2>
           <p class="text-slate-400 text-sm">
-            I'd love to hear from you. Fill out the form below.
+            Have an idea or just want to say hi? I’d love to hear from you.
           </p>
         </div>
 

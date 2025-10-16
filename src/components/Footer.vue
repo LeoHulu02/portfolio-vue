@@ -40,7 +40,7 @@
         :initial="{ opacity: 0, y: 20 }"
         :enter="{ opacity: 1, y: 0, transition: { delay: 400 } }"
       >
-        <p>Didesain & Dibuat oleh Leo Saputra Hulu © {{ currentYear }}</p>
+        <p>Designed & Built by Leo Saputra Hulu © {{ currentYear }}</p>
       </div>
     </div>
   </footer>
@@ -105,10 +105,13 @@ const currentYear = computed(() => new Date().getFullYear());
 @media (max-width: 768px) {
   .footer-container {
     padding: 1.5rem 5%;
-    margin-bottom: 15%;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 80px);
   }
   .footer-links {
     gap: 1.25rem;
+  }
+  .footer-text p {
+    font-size: 0.8rem;
   }
 }
 </style>

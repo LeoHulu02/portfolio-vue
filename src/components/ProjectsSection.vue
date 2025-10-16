@@ -13,7 +13,7 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 max-w-3xl mx-auto">
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-sm">
-          A Selection of My
+          Selected
           <span
             class="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent drop-shadow-lg"
           >
@@ -21,7 +21,7 @@
           </span>
         </h2>
         <p class="text-lg text-slate-300 leading-relaxed mt-4">
-          Explore some of my recent work — from full-stack apps to responsive websites.
+          A few things I’ve built recently — from full‑stack apps to responsive websites.
         </p>
       </div>
 
@@ -39,12 +39,12 @@
 <script setup>
 import ProjectCard from './ui/ProjectCard.vue';
 
-// Data proyek lengkap
+// Complete project data
 const projects = [
   {
     id: 1,
     title: 'MobileEasse',
-    description: 'Sistem informasi bengkel online untuk manajemen transaksi, stok, dan pelanggan.',
+    description: 'Online workshop management system for transactions, inventory, and customers.',
     image: '/images/pos-bengkel.jpeg',
     githubLink: 'https://github.com/LeoHulu02',
     liveLink: '',
@@ -52,8 +52,8 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Alumni SMA 2020',
-    description: 'Website responsive yang menampilkan semua profil alumni angkatan 2020.',
+    title: 'Alumni 2020 Portal',
+    description: 'Responsive website showcasing profiles of the 2020 alumni cohort.',
     image: '/images/web-alumni.png',
     githubLink: 'https://github.com/LeoHulu02',
     liveLink: '',
@@ -62,7 +62,7 @@ const projects = [
   {
     id: 3,
     title: 'File Upload App',
-    description: 'Aplikasi upload file dengan Express.js dan React + Firebase Storage.',
+    description: 'File upload app using Express.js with Firebase Storage and a modern frontend.',
     image: '/images/upload-file.png',
     githubLink: 'https://github.com/LeoHulu02',
     liveLink: '',

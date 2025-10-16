@@ -1,6 +1,7 @@
 // tailwind.config.js
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts}'],
+
   theme: {
     extend: {
       keyframes: {
@@ -11,6 +12,11 @@ export default {
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+      },
+      colors: {
+        primary: '#0ea5e9',
+        secondary: '#0284c7',
+        'navbar-bg': '#2E236C',
       },
     },
   },

@@ -1,27 +1,19 @@
 <template>
   <a
     :href="`#${link.id}`"
-    class="flex flex-col items-center text-xs font-medium relative focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-md p-1"
-    :aria-label="link.label"
+    :class="[
+        'flex flex-col items-center justify-center px-3 sm:px-4 py-2.5 sm:py-3 text-[11px] sm:text-xs font-semibold transition-all duration-300 rounded-lg',
+        isActive 
+          ? 'text-white' 
+          : 'text-slate-300 hover:text-white'
+      ]"
     :aria-current="isActive ? 'page' : null"
   >
-    <div
-      :class="[
-        'w-6 h-6 mb-1 flex items-center justify-center transition-colors duration-300',
-        isActive ? 'text-cyan-400' : 'text-slate-300'
-      ]"
-    >
-      <component :is="link.icon" class="w-full h-full" />
-    </div>
-    <span :class="[
-      'transition-colors duration-300',
-      isActive ? 'text-cyan-400' : 'text-slate-300'
-    ]">
-      {{ link.shortLabel }}
-    </span>
+    <component :is="link.icon" class="w-5 h-5 sm:w-6 sm:h-6 mb-1" />
+    <span class="text-xs">{{ link.shortLabel }}</span>
     <span
       v-if="isActive"
-      class="absolute -top-1 w-1.5 h-1.5 rounded-full bg-cyan-400 transition-all duration-300"
+      class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"
     />
   </a>
 </template>

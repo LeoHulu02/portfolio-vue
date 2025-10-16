@@ -37,12 +37,15 @@
         </h2>
 
         <p class="text-slate-300 mb-6 text-lg leading-relaxed max-w-prose">
-          Halo, saya <span class="font-medium text-white">Leo Hulu</span>. Saya adalah seorang <strong>Web Developer</strong> yang memiliki keahlian dalam pengembangan full-stack. Saya mengubah ide menjadi aplikasi web yang berfungsi penuh, dari antarmuka pengguna interaktif dengan <strong>Vue.js</strong> hingga backend yang terstruktur dengan <strong>Express.js</strong> dan manajemen database menggunakan <strong>Prisma</strong> dan <strong>PostgreSQL</strong>.
+          I’m <span class="font-medium text-white">Leo Hulu</span> — a 7th‑semester student who codes for fun and impact.
+          I turn ideas into elegant, production‑ready web apps: responsive interfaces with <strong>Vue.js</strong>, and
+          solid backends powered by <strong>Express.js</strong> and <strong>Prisma</strong>. I care deeply about clean
+          design, performance, and delightful user experiences.
         </p>
 
         <!-- Skills -->
         <div class="mb-8">
-          <h3 class="text-lg font-semibold text-slate-200 mb-3">My Main Skills:</h3>
+          <h3 class="text-lg font-semibold text-slate-200 mb-3">Core Skills:</h3>
           <div class="flex flex-wrap gap-2">
             <span
               v-for="tech in techStack"
